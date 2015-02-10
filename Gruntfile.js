@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                 branch: 'master'
             }
         }
-     }
+     },
 
     // The actual grunt server settings
     connect: {
@@ -150,7 +150,6 @@ module.exports = function (grunt) {
             '!<%= yeoman.dist %>/web.js',
             '!<%= yeoman.dist %>/node_modules'
            ]
-          ]
         }]
       },
       server: '.tmp'
