@@ -69,7 +69,7 @@ module.exports = function (grunt) {
         },
         heroku: {
             options: {
-                remote: 'git@heroku.com:heroku-app-1985.git',
+                remote: 'git@heroku.com:jumbotron-angular.git',
                 branch: 'master'
             }
         }
