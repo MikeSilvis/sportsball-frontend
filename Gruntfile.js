@@ -60,6 +60,20 @@ module.exports = function (grunt) {
         ]
       }
     },
+    buildcontrol: {
+        options: {
+            dir: 'dist',
+            commit: true,
+            push: true,
+            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+        heroku: {
+            options: {
+                remote: 'git@heroku.com:heroku-app-1985.git',
+                branch: 'master'
+            }
+        }
+     }
 
     // The actual grunt server settings
     connect: {
@@ -129,7 +143,13 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
+            '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/.git{,*/}*',
+            '!<%= yeoman.dist %>/Procfile',
+            '!<%= yeoman.dist %>/package.json',
+            '!<%= yeoman.dist %>/web.js',
+            '!<%= yeoman.dist %>/node_modules'
+           ]
           ]
         }]
       },
@@ -475,6 +495,8 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
+
+  grunt.registerTask('deploy', ['buildcontrol']);
 
   grunt.registerTask('default', [
     'newer:jshint',
