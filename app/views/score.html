@@ -1,5 +1,28 @@
 <ul ng-controller='ScoreCtrl' class='ScoreCtrl'>
   <li ng-repeat='score in scores' >
-    {{score.away_team.name}}
+    <div class='row'>
+      <div class='col-xs-9'>
+        <img ng-src="{{score.away_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
+        {{score.away_team.name}} <small>({{score.away_team.record}})</small>
+      </div>
+      <div class='col-xs-1'>
+        {{score.away_score}}
+      </div>
+      <div class='col-xs-1 text-center'>
+        {{score.progress}}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-9'>
+        <img ng-src="{{score.home_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
+        {{score.home_team.name}} <small>({{score.away_team.record}})</small>
+      </div>
+      <div class='col-xs-1'>
+        {{score.home_score}}
+      </div>
+      <div class='col-xs-1 text-center'>
+        {{score.time_remaining}}
+      </div>
+    </div>
   </li>
 </ul>

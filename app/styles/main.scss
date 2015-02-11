@@ -35,3 +35,27 @@ body {
     }
   }
 }
+
+.ScoreCtrl {
+  padding-left: 0px;
+
+  li {
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    list-style-type: none;
+    border-bottom: 1px solid white;
+    .row {
+      height: 30px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 20px;
+      small {
+        font-size: 0.8em;
+      }
+      img {
+        padding-right: 10px;
+      }
+    }
+  }
+}
