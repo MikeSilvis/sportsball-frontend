@@ -1,28 +1,36 @@
-<ul ng-controller='ScoreCtrl' class='ScoreCtrl'>
-  <li ng-repeat='score in scores' >
-    <div class='row'>
-      <div class='col-xs-9'>
-        <img ng-src="{{score.away_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
-        {{score.away_team.name}} <small>({{score.away_team.record}})</small>
+<div ng-controller='ScoreCtrl' class='ScoreCtrl'>
+  <div class='row header-img' style='background-image: url("{{league.header_blurred_image | leagueLogo:1000:500}}")'>
+    <a href="#/leagues">
+      <i class="fa fa-bars fa-3x"></i>
+     </a>
+    <img ng-src="{{league.logo | leagueLogo:100:100}}" alt="{{league.name}}" />
+  </div>
+  <ul>
+    <li ng-repeat='score in scores' >
+      <div class='row'>
+        <div class='col-xs-9'>
+          <img ng-src="{{score.away_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
+          {{score.away_team.name}} <small>({{score.away_team.record}})</small>
+        </div>
+        <div class='col-xs-1'>
+          {{score.away_score}}
+        </div>
+        <div class='col-xs-1 text-center'>
+          {{score.progress}}
+        </div>
       </div>
-      <div class='col-xs-1'>
-        {{score.away_score}}
+      <div class='row'>
+        <div class='col-xs-9'>
+          <img ng-src="{{score.home_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
+          {{score.home_team.name}} <small>({{score.away_team.record}})</small>
+        </div>
+        <div class='col-xs-1'>
+          {{score.home_score}}
+        </div>
+        <div class='col-xs-1 text-center'>
+          {{score.time_remaining}}
+        </div>
       </div>
-      <div class='col-xs-1 text-center'>
-        {{score.progress}}
-      </div>
-    </div>
-    <div class='row'>
-      <div class='col-xs-9'>
-        <img ng-src="{{score.home_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
-        {{score.home_team.name}} <small>({{score.away_team.record}})</small>
-      </div>
-      <div class='col-xs-1'>
-        {{score.home_score}}
-      </div>
-      <div class='col-xs-1 text-center'>
-        {{score.time_remaining}}
-      </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>

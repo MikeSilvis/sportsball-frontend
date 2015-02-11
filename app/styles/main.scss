@@ -13,32 +13,44 @@ body {
   margin: 0px;
   padding: 0px;
   li {
-    $divHeight: 300px;
-
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important;
-    height: $divHeight;
     width: 100%;
     list-style-type: none;
     a{
       width: 100%;
-      height: $divHeight;
+      height: 300px;
       display: block;
     }
-    img {
-      display: block;
-      margin: 0 auto;
-      padding-top: ($divHeight - 100) / 2;
-      height: 100;
-    }
+  }
+}
+
+.header-img {
+  $divHeight: 300px;
+
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  height: $divHeight;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    padding-top: ($divHeight - 100) / 2;
+    height: 100;
+  }
+  i {
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 }
 
 .ScoreCtrl {
   padding-left: 0px;
-
+  ul {
+    padding-left: 0px;
+  }
   li {
     color: white;
     padding-bottom: 5px;
@@ -49,7 +61,6 @@ body {
       height: 30px;
       margin-top: 5px;
       margin-bottom: 5px;
-      padding-left: 20px;
       small {
         font-size: 0.8em;
       }
