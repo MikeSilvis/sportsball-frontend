@@ -20,11 +20,11 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-      .when '/about',
-        templateUrl: 'views/about.html'
-        controller: 'AboutCtrl'
+        templateUrl: 'views/league.html'
+        controller: 'LeagueCtrl'
+      .when '/leagues/:id/scores',
+        templateUrl: 'views/score.html'
+        controller: 'ScoreCtrl'
       .otherwise
         redirectTo: '/'
 
