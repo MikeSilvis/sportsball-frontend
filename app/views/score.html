@@ -12,11 +12,14 @@
           <img ng-src="{{score.away_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
           {{score.away_team.name}} <small>({{score.away_team.record}})</small>
         </div>
-        <div class='col-xs-1'>
+        <div class='col-xs-1' ng-if='score.state == "postgame" || score.state == "in-progress"'>
           {{score.away_score}}
         </div>
-        <div class='col-xs-1 text-center'>
+        <div class='col-xs-1 text-center' ng-if='score.state == "postgame" || score.state == "in-progress"'>
           {{score.progress}}
+        </div>
+        <div class='col-xs-3 text-center' ng-if='score.state == "pregame"'>
+          {{score.start_time | startTime}}
         </div>
       </div>
       <div class='row'>
@@ -24,11 +27,11 @@
           <img ng-src="{{score.home_team.logo | leagueLogo:30:30}}" alt="{{score.away_team.name}}" />
           {{score.home_team.name}} <small>({{score.away_team.record}})</small>
         </div>
-        <div class='col-xs-1'>
+        <div class='col-xs-1' ng-if='score.state == "postgame" || score.state == "in-progress"'>
           {{score.home_score}}
         </div>
-        <div class='col-xs-1 text-center'>
-          {{score.time_remaining}}
+        <div class='col-xs-3 text-center' ng-if='score.state == "pregame"'>
+          {{score.line}}
         </div>
       </div>
     </li>
