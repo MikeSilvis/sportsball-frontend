@@ -1,0 +1,1 @@
+<ul ng-controller="LeagueCtrl" class="LeagueCtrl"> <li ng-repeat="league in leagues" style="background-image: url(&quot;{{league.header_blurred_image | leagueLogo:1000:500}}&quot;)" class="header-img"> <a ng-href="/#/leagues/{{league.name}}/scores"> <img ng-src="{{league.logo | leagueLogo:100:100}}" alt="{{league.name}}"> </a> </li> </ul>
