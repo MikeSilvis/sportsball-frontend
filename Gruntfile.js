@@ -60,20 +60,6 @@ module.exports = function (grunt) {
         ]
       }
     },
-    buildcontrol: {
-        options: {
-            dir: 'dist',
-            commit: true,
-            push: true,
-            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-        },
-        heroku: {
-            options: {
-                remote: 'git@heroku.com:jumbotron-angular.git',
-                branch: 'master'
-            }
-        }
-     },
 
     // The actual grunt server settings
     connect: {
@@ -494,8 +480,6 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
-
-  grunt.registerTask('deploy', ['buildcontrol']);
 
   grunt.registerTask('default', [
     'newer:jshint',
